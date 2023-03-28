@@ -1,0 +1,1006 @@
+{% load static %}
+{% static 'images' as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+
+        
+
+        
+        
+        button {
+          background-color: transparent;
+          border: none;
+          border-radius: 20%;
+          color: #45a3e2;
+          padding: 12px 24px;
+          font-size: 0.7em;
+          font-weight: bold ;
+        }
+
+        button:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        
+        html{
+            margin: 0%;
+            padding: 0%;
+            
+        }
+        body {
+            background-color: #fff;
+            font-family: 'Nunito', sans-serif;
+            padding-top: 0px;
+            margin: auto;
+            
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+            background-color: #fff;
+            color: #807c7c;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            font-size: 1.5em;
+            }
+
+            .back-to-top.show {
+            opacity: 1;
+            }
+
+        .container {
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:0;
+            background-color: #c4e5fa;
+            color: #242729;
+            font-weight: bolder;
+            line-height: 3em;
+            border: 3em solid #c4e5fa;
+        }
+
+        .header {
+            border-bottom: 2px solid rgb(158, 154, 154);
+            height: auto;
+            text-align: center;
+            vertical-align: middle;
+            font-size: large;
+            font-weight: bolder;
+            color:#242729 ;
+            line-height: 50px;
+            top: 0;
+            left: 0;
+            width: auto;
+            position: relative;
+                        
+            }
+
+        header{
+            margin: 0;
+            padding-bottom: 2%;
+        }
+        .fa-map-marker-alt{
+          color: #45c3e2;
+          
+        }
+
+nav {
+  background-color: #45c3e2;
+  font-size: 16px;
+  padding: 10px;
+  padding-left: 1.5%;
+  height:1em;
+  line-height: 1em;
+  max-width: 90%;
+  margin: auto;
+  font-weight: bolder;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  align-content: space-between;
+  margin-right: 2%;
+}
+
+.toggle-nav{
+display: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.heading{
+  padding-left: 4%;
+  width: 85%;
+  margin-top: 1.5em;
+}
+
+        .profile{
+            background-color: #c4e5fa;
+            max-width: 99%;
+            margin: auto;
+            color: #4f5355;
+            font-weight: 500;
+            padding-top: 0%;
+            padding-bottom: 0%;
+            padding-left: 0%;
+            padding-right: 0%;
+            line-height: 1.75em;
+            text-align: center;
+        }
+        .project {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Optional: center align features horizontally */
+        }
+
+
+.profile {
+  display: flex;
+  height: auto;
+  
+}
+.profile-description {
+    width: 65%;
+    padding: 2em;
+    padding-top: 0%;
+  }
+  
+  .profile-image {
+    width: 35%;
+    height: 20vw;
+    padding-right: 30px;
+  }
+
+  .experience {
+    /* white-space: nowrap;
+    overflow: hidden; */
+    display: flex;
+    margin-bottom: 0%;
+    margin-bottom: 2%;  
+    }
+
+
+.company-logo {
+    width: 25%;
+    padding: 25px;
+    border-right: 2px solid rgb(158, 154, 154);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.company-logo img{
+    border-radius: 50%;
+    width: 9em;
+    height: 9em;
+}
+  
+.job-detail {
+
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    width: 75%;
+    height: fit-content;
+    padding: 5px;
+    padding-left: 20px; 
+  }
+
+.responsibilities {
+  font-weight: lighter;
+  width: 85%;
+  text-align: justify;
+  /* color: #575b5e; */
+  line-height: normal;
+}
+
+.feature {
+  display: inline-block;
+  height: fit-content;
+  width: 30%; /* set the width of each feature to 30% of the container */
+  margin: 1.4%; /* add margin to create space between each feature */
+  vertical-align: top; /* align the top of each feature */
+  box-sizing: border-box; /* include padding and border in the element's total width and height */
+  background-color: #fff;
+  border: 1px solid #b2b9bd ;
+  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  padding-bottom: 20px;
+}
+
+.skill{
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+.skill-feature {
+  display: inline-block;
+  height: fit-content;
+  width: 18.5%; /* set the width of each feature to 30% of the container */
+  margin: .5%; /* add margin to create space between each feature */
+  vertical-align: top; /* align the top of each feature */
+  box-sizing: border-box; /* include padding and border in the element's total width and height */
+  background-color: #fff;
+  border: 1px solid #b2b9bd ;
+}
+
+.image{
+    height: 150px;
+    padding: 0%;
+}
+
+.image-skill{
+    height: 5em;
+    padding: 0%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+.project-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: auto;
+  font-size:x-large;  
+  color: #242729;
+  height: auto;
+  padding-left: 15px;
+  padding-right: 15px;  
+  padding-top: 15px;
+  font-weight:900;  
+}
+
+.skill-name  {
+  white-space: nowrap;
+  overflow: hidden;
+  height: auto;
+  font-size:12px;  
+  color: #242729;
+  padding-left: 1%;
+  padding-right: 1%;  
+  font-weight:bolder;  
+  text-align: center;
+}
+
+.project-description{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Change this value to adjust the number of lines */
+  -webkit-box-orient: vertical;
+  font-size:15px;  
+  color: #5e6366; 
+  line-height: 1.5em; 
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+}
+
+.feature:hover {
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+  }
+
+.skill-feature:hover{
+    
+    transform: scale(0.97);
+}  
+
+.pub{
+  margin: auto;
+  width: 85%;
+  padding: 1.5%;
+  border-bottom: 0.5px solid #ced6db;
+  border-top: 0.5px solid #ced6db;
+  line-height: 1.7em;
+}
+.url{
+  background-color: #45c3e2;
+  color:#242729 ;
+  width: fit-content;
+  padding: 0.5%;
+  padding-top: 0.1%;
+  padding-bottom: 0.1%;
+  border-radius: 10px;
+  margin-top: 1%;
+}
+
+.journal{
+  font-weight: lighter;
+}
+
+
+.url a{
+  text-decoration: none;
+}
+
+.modal {
+  display: none;
+  position:fixed;
+  z-index: 1;
+  padding-top: 3%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow:scroll;
+  background-color: rgba(71, 70, 70, 0.9);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 60%;
+  max-height: 90%;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 60%;
+    height: auto;
+    text-align: left;
+    color: white;
+    padding: 10px;
+    line-height: normal;
+    margin-bottom: 2%;
+  }
+
+.close {
+  position:absolute;
+  top: .1em;
+  right: 1em;
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+  z-index: 2;
+}
+
+.close:hover{
+  cursor: pointer;
+}
+
+.fas.fa-map-marker-alt {
+        font-size: 1em;
+        padding-right: 1%;
+      }
+
+.material-icons {
+    font-size: 1em; /* Adjust the font size as needed */
+  }
+
+p {
+  margin: 1.5%;
+}
+
+.footer{
+  padding-top: 2%;
+  max-width: 50%;
+  margin: auto;
+}
+
+.footer p{
+  text-align: center;
+  font-weight:lighter;
+  line-height: 1em;
+  font-size: .9em;
+  letter-spacing: 0.1em;
+}
+
+.footer p:first-child {
+    font-weight: bold;
+    margin-bottom: 3%;
+  }
+
+  
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+.header h2{
+  display: none;
+}
+
+
+nav{
+  background-color:transparent;
+  height: 2em;
+  line-height: 2em;
+  margin: 0%;
+  width: 100%;
+}
+
+ 
+
+.toggle-nav{
+display:flex;
+justify-content: space-between;
+font-size: x-large;
+font-weight: bolder;
+color: #1e4e6e;
+padding: 0%;
+}    
+
+nav ul {
+  display: none;
+}
+
+
+nav .toggle-nav + ul.show {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 999;
+  background-color: #e0e0e4ce;
+  height: fit-content;
+  width: auto ;
+  align-items: center;
+  margin: auto;
+  border-bottom: 1px solid white;
+  margin-top: 20px;
+  margin-left: -10px;
+  margin-right: -23px;
+}
+
+.header li {
+  width: 100%;
+  margin:auto;
+  line-height: 2em;
+  border-bottom: 1px solid white;
+}
+.header a{
+  color: #807c7c;
+}
+
+
+  .container{
+    max-width: 100%;
+    border: 0;
+    margin: auto;
+    margin-top: 0%;
+    padding: 5%;
+    border-top: 1px solid #e4edf3;
+    background-color: #e4edf3;
+  }
+  .heading{
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+}
+
+.company-logo {
+    width: 20%;
+    padding: 25px;
+    padding-left: 0%;
+    border-right: 2px solid rgb(158, 154, 154);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.company-logo img{
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+}
+
+
+.job-detail {
+    /* white-space: nowrap;
+    overflow: hidden; */
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    width: 80%;
+    height: auto;
+    padding: 5px;
+    padding-left: 20px; 
+  }
+
+.company-name{
+  line-height: normal;
+}
+
+.feature {
+  /* display: inline-block; */
+  height: fit-content;
+  width: 45%; /* set the width of each feature to 30% of the container */
+  margin: 1.4%; /* add margin to create space between each feature */
+  vertical-align: top; /* align the top of each feature */
+  /* box-sizing: border-box; include padding and border in the element's total width and height */
+  /* background-color: #fff; */
+  /* border: 1px solid #b2b9bd ; */
+  /* -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21); */
+  /* box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21); */
+  padding-bottom: 20px;
+}
+
+.project-title {
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  height: auto;
+  font-size:large;  
+  color: #242729;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;  
+  padding-top: 0px;
+  font-weight:900;  
+  margin-top: 0%;
+}
+
+.image{
+  height: 100px;
+  padding: 0%;
+  margin: 0%;
+}
+
+.project-description{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Change this value to adjust the number of lines */
+  -webkit-box-orient: vertical;
+  font-size:15px;  
+  color: #5e6366; 
+  line-height: 1.5em; 
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: lighter;
+}
+
+.feature .image img{
+  height: 100px;
+}
+
+  .skill-feature{
+    /* display: block; */
+    padding: 0%;
+    width: 45%;
+    margin: 0%;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 1%;
+    background-color: transparent;
+    color: #807c7c;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: smaller;
+    }
+
+    .modal{
+      padding-top: 25%;
+      overflow: scroll;
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 50%;
+    }
+
+    #caption{
+      width: 90%;
+      overflow: scroll;
+      height: fit-content;
+    }
+
+.footer p{
+  text-align: center;
+  font-weight:lighter;
+  line-height: 1em;
+  font-size: .9em;
+  letter-spacing: 0.1em;
+}
+
+.footer{
+  padding-top: 4%;
+  /* margin-top: 3%; */
+  max-width: 100%;
+  margin: auto;
+}
+
+.footer p :first-child{
+  font-size: smaller;
+}
+.profile-image{
+  /* display: none; */
+  width: 100%;
+  height:auto;
+}
+
+.profile{
+  background-color:#e4edf3;
+  margin: 0%;
+  padding: 1%;
+  padding-left: 2%;
+  flex-direction: column-reverse;
+  position: relative;
+  z-index: 0;
+}
+
+.profile-description{
+  width: 100%;
+  padding: 0%;
+  text-align: left;
+  z-index: 0;
+}
+
+
+}
+
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+    
+
+<div class="container">
+    <div class="header">
+        <header>
+            {% for header in header %}
+            <h2>{{header.name}}</h2>
+            {% endfor %}
+            
+            <nav>
+              <div class="toggle-nav">
+                Apekshya Kandel
+                <i class="fas fa-bars"></i>
+                
+              </div>
+              
+                <ul>
+                   <li><a href="#education"onclick="scrollToSection('#education')">Education</a></li>
+                   <li><a href="#experience"onclick="scrollToSection('#experience')">Experience</a></li>
+                   <li><a href="#project"onclick="scrollToSection('#project')">Projects</a></li>
+                   <li><a href="#publication"onclick="scrollToSection('#publication')">Publications</a></li>
+                   <li><a href="#skill"onclick="scrollToSection('#skill')">Skills</a></li>
+                   <li><a href="#certification"onclick="scrollToSection('#certification')">Certifications</a></li>
+                   <li><a href="#awards"onclick="scrollToSection('#award')">Awards</a></li>
+                   <li><a href="#contact"onclick="scrollToSection('#contact')">Contact</a></li>
+                </ul>
+             </nav>
+        </header>
+    </div>
+    <div class = 'heading'><h3>ABOUT ME</h3></div>
+        <div id ='home' class ='profile' >
+            {% for profile_obj in profile %}
+            <div class = profile-description>
+                {{ profile_obj.description }}
+            </div>  
+            <div class="profile-image">
+                <img src="{{profile_obj.profile_image.url}}" alt ='image'>
+            </div>    
+            {% endfor %}
+            
+        </div>
+        <div class = 'heading'id = 'education'><h3>EDUCATION<button id = 'but' onclick="More()">See All&nbsp&nbsp<i class="fas fa-chevron-down"></i></button></h3></div>
+        <div class="education" id ='edu'>
+          {% for edu in education %}
+              <div class="experience" >
+                  <div class="company-logo">
+                      <img src="{{edu.image.url}}" alt ='image'>
+                  </div>
+                  <div class="job-detail">
+                      <div class ='company-name'>
+                          {{edu.school}}
+                      </div>
+                      <div class="responsibilities">
+                          <p><span class="fas fa-map-marker-alt"></span>{{edu.location}}</p>
+                          <p>{{edu.year}}</p>
+                          <p>{{edu.degree}}</p>
+                          <p>{{edu.gpa}}</p>
+                          
+                      </div>
+                  </div>
+              </div>
+                  
+          {% endfor %}
+          
+          </div>
+          <div class = more>
+          <div class = 'heading' id = 'experience'><h3>WORK EXPERIENCE <button id = 'mybut' onclick="showMore()">See All&nbsp&nbsp<i class="fas fa-chevron-down"></i></button></h3></div> 
+          
+        </div>
+        <div class="work-experience" id ='work'>
+            {% for exp in experience %}
+                <div class="experience" >
+                    <div class="company-logo">
+                        <img src="{{exp.image.url}}" alt ='image'>
+                    </div>
+                    <div class="job-detail">
+                        <div class ='company-name'>
+                            {{exp.company}}
+                        </div>
+                        <div class="responsibilities">
+                          <p><span class="fas fa-map-marker-alt"></span>{{exp.location}}</p>
+                          <p>{{exp.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                    
+            {% endfor %}
+            </div>
+            <div class = 'heading'id = 'project'><h3>PROJECTS</h3></div>   
+        <div class="my-project", >
+            <div class = "project">   
+                {% for project in project %}
+               
+                  <div class="feature">
+                    <a href=""onclick="showModal('{{project.image.url}}','{{project.description}}')">
+                        <div class="image">
+                            <img src="{{project.image.url}}" alt ='image'>
+                        </div>
+                        <div class="project-title">
+                            {{project.title}}
+                        </div>
+                        <div class="project-description">
+                            {{project.description}}
+                        </div>
+                      </a>
+                </div>
+                
+                
+                {% endfor %}
+            </div>
+            
+        </div>
+
+        <div class = 'heading' id ='publication'><h3>PUBLICATIONS</h3></div>
+
+        <div class="publlication">
+          {% for pub in publication %}
+          <div class="pub">
+                <div class="pub-title">
+                    {{pub.title}}
+                </div>
+                <div class="journal">
+                    {{pub.journal}}
+                </div>
+                <div class="url">
+                <a href="{{pub.url}}" target="_blank">Show publication
+                </a>
+                </div>
+        </div>
+        {% endfor %}
+
+        </div>
+
+        
+        <div class = 'heading' id = 'skill'><h3>TECHNICAL SKILLS</h3></div>      
+       
+        <div class = "skill">
+            {% for skill in skill %}
+            <div class="skill-feature">
+                <div class="image-skill">
+                    <img src="{{skill.image.url}}" alt ='image'>
+                </div>
+                <div class="skill-name">
+                    {{skill.title}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    
+        <div class = 'heading' id ='certification'><h3>CERTIFICATIONS</h3></div>
+        <div class="certification">
+          {% for cert in certification %}
+          <div class="pub">
+                <div class="pub-title">
+                    {{cert.title}}
+                </div>
+                <div class="journal">
+                    {{cert.org}}
+                </div>
+                <div class="url">
+                  <a href="#" onclick="showModal('{{cert.image.url}}')">Show credential
+                  </a>
+                  </div>
+        </div>
+        {% endfor %}
+        <div class = 'heading' id = 'award'><h3>AWARDS</h3></div>
+        <div class="certification">
+          {% for award in award %}
+          <div class="pub">
+                <div class="pub-title">
+                    {{award.title}}
+                </div>
+                <div class="journal">
+                    {{award.org}}
+                </div>
+                <div class="url">
+                  <a href="#" onclick="showModal('{{award.image.url}}')">Show credential
+                  </a>
+                  </div>
+        </div>
+        {% endfor %}
+
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>  
+        </div>
+     
+
+        </div>
+
+
+        <footer>
+          {% for footer in footer %}
+            <div class = footer id ='contact'>
+              <p>{{footer.title}}</p>
+              <p><span class="fas fa-map-marker-alt"></span>&nbsp&nbsp{{footer.location}}</p>
+              <p><span>&#9742;</span>&nbsp&nbsp{{footer.phone}}</p>
+              <p><i class="material-icons">email</i>&nbsp&nbsp{{footer.gmail}}</p>
+                 
+          {% endfor %}
+        </footer>
+    </div>
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+      </a>  
+
+<script>
+
+
+  var rows = document.querySelectorAll('#work .experience');
+  // perform operations on the selected elements
+  for (var k = 1; k < rows.length; k++) {
+    rows[k].style.display = "none";
+  }
+
+function showMore() {
+  var button = document.querySelector("#mybut");
+  const chevronUp = document.querySelector('.fas fa-chevron-up');
+  const chevronDown = document.querySelector('.fas fa-chevron-down');
+  
+  // toggle the display of the hidden rows
+  for (var i = 1; i < rows.length; i++) {
+    if (rows[i].style.display === "none") {
+      rows[i].style.display = "flex";
+      button.innerHTML = "See Less&nbsp&nbsp<i class='fas fa-chevron-up'></i>";
+    } 
+    else {
+      rows[i].style.display = "none";
+      button.innerHTML = "See All&nbsp&nbsp<i class='fas fa-chevron-down'></i>";
+    }
+  }
+}
+
+var row = document.querySelectorAll('#edu .experience');
+  // perform operations on the selected elements
+  for (var k = 1; k < row.length; k++) {
+    row[k].style.display = "none";
+  }
+
+function More() {
+  var button = document.querySelector("#but");
+  const chevronUp = document.querySelector('.fas fa-chevron-up');
+  const chevronDown = document.querySelector('.fas fa-chevron-down');
+  
+  // toggle the display of the hidden rows
+  for (var i = 1; i < row.length; i++) {
+    if (row[i].style.display === "none") {
+      row[i].style.display = "flex";
+      button.innerHTML = "See Less&nbsp&nbsp<i class='fas fa-chevron-up'></i>";
+    } 
+    else {
+      row[i].style.display = "none";
+      button.innerHTML = "See All&nbsp&nbsp<i class='fas fa-chevron-down'></i>";
+    }
+  }
+}
+
+
+
+      function showModal(imagePath, description) {
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.src = imagePath;
+        captionText.innerHTML = description || "";
+        modal.style.display = "block";
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        event.preventDefault()
+      }
+
+      function showImagePopup(imagePath,description) {
+        var popup = window.open('', '', 'width=400,height=400');
+        popup.document.write('<img src="' + imagePath + '">', description);
+      }
+
+        function scrollToSection(section) {
+        const target = document.querySelector(section);
+        target.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        var backToTopButton = document.querySelector(".back-to-top");
+
+    window.addEventListener("scroll", scrollFunction);
+
+    function scrollFunction() {
+      if (window.pageYOffset > 300) {
+        if(!backToTopButton.classList.contains("show")) {
+          backToTopButton.classList.add("show");
+        }
+      }
+      else {
+        if(backToTopButton.classList.contains("show")) {
+          backToTopButton.classList.remove("show");
+        }
+      }
+    }
+
+    backToTopButton.addEventListener("click", backToTop);
+
+    function backToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+
+    const toggleNav = document.querySelector('.toggle-nav');
+    const navItems = document.querySelector('nav ul');
+
+toggleNav.addEventListener('click', function() {
+  navItems.classList.toggle('show');
+});
+
+    </script>
+
+    
+</body>
+

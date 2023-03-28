@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+        html{
+            margin: 0%;
+            padding: 0%;
+            
+        }
+        body {
+            background-color: #fff;
+            font-family: 'Nunito', sans-serif;
+            padding-top: 0px;
+            margin: auto;
+            
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+            background-color: #fff;
+            color: #807c7c;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            }
+
+            .back-to-top.show {
+            opacity: 1;
+            }
+
+        .container {
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:0;
+            background-color: #f5fafd;
+            color: #242729;
+            font-weight: bolder;
+            line-height: 3em;
+            border:20px solid #f5fafd;
+        }
+
+        .header {
+            border-bottom: 2px solid rgb(158, 154, 154);
+            height: auto;
+            text-align: center;
+            vertical-align: middle;
+            font-size: large;
+            font-weight: bolder;
+            color:#242729 ;
+            line-height: 50px;
+            top: 0;
+            left: 0;
+            width: auto;
+                        
+            }
+
+        header{
+            margin: 0;
+            padding-bottom: 2%;
+        }
+
+nav {
+  background-color: #afe3f0;
+  font-size: 16px;
+  padding: 10px;
+  height:1em;
+  line-height: 1em;
+  max-width: 50%;
+  margin: auto;
+  font-weight: bolder;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+  line-height: 1;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+        .profile{
+            background-color: #f5fafd;
+            max-width: 99%;
+            margin: auto;
+            color: #5e6366;
+            font-weight: 300;
+            padding-top: 0%;
+            padding-bottom: 0%;
+            padding-left: 0%;
+            padding-right: 0%;
+            line-height: 1.75em;
+            text-align: center;
+        }
+        .project {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Optional: center align features horizontally */
+        }
+
+
+.profile {
+  display: flex;
+  height: 300px;
+  
+}
+.profile-description {
+    width: 65%;
+    padding: 25px;
+  }
+  
+  .profile-image {
+    width: 35%;
+    height: 300px;
+    padding-right: 30px;
+  }
+
+  .experience {
+  display: flex;
+  height: 200px;
+  
+}
+.company-logo {
+    width: 25%;
+    padding: 25px;
+    border-right: 2px solid rgb(158, 154, 154);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.company-logo img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+  
+.job-detail {
+    width: 75%;
+    height: 100px;
+    padding: 5px;
+    padding-left: 20px; 
+  }
+
+.experience{
+    margin-bottom: 20px;
+}
+
+.feature {
+  display: inline-block;
+  height: fit-content;
+  width: 30%; /* set the width of each feature to 30% of the container */
+  margin: 1.4%; /* add margin to create space between each feature */
+  vertical-align: top; /* align the top of each feature */
+  box-sizing: border-box; /* include padding and border in the element's total width and height */
+  background-color: #fff;
+  border: 1px solid #d3d8db ;
+  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  padding-bottom: 20px;
+}
+
+.skill{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.skill-feature {
+  display: inline-block;
+  height: fit-content;
+  width: 18.5%; /* set the width of each feature to 30% of the container */
+  margin: .5%; /* add margin to create space between each feature */
+  vertical-align: top; /* align the top of each feature */
+  box-sizing: border-box; /* include padding and border in the element's total width and height */
+  background-color: #fff;
+  border: 1px solid #d3d8db ;
+}
+
+.image{
+    height: 150px;
+    padding: 0%;
+}
+
+.image-skill{
+    height: 100px;
+    padding: 0%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+.project-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: auto;
+  font-size:x-large;  
+  color: #242729;
+  height: auto;
+  padding-left: 15px;
+  padding-right: 15px;  
+  padding-top: 15px;
+  font-weight:900;  
+}
+
+.skill-name  {
+  height: auto;
+  font-size:12px;  
+  color: #242729;
+  height: auto;
+  padding-left: 15px;
+  padding-right: 15px;  
+  font-weight:bolder;  
+  text-align: center;
+}
+
+.project-description{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Change this value to adjust the number of lines */
+  -webkit-box-orient: vertical;
+  font-size:15px;  
+  color: #5e6366; 
+  line-height: 1.5em; 
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+}
+
+.feature:hover {
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+  }
+
+.skill-feature:hover{
+    
+    transform: scale(0.97);
+}  
+    </style>
+</head>
+
+<body>
+
+    
+
+<div class="container">
+    <div class="header">
+        <header>
+            <h2>Apekshya Kandel</h2>
+            <nav>
+                <ul>
+                   <li><a href="#home" onclick="scrollToSection('#home')">Home</a></li>
+                   <li><a href="#experience"onclick="scrollToSection('#experience')">Experience</a></li>
+                   <li><a href="#eduction">Education</a></li>
+                   <li><a href="#project">Projects</a></li>
+                   <li><a href="#skill">Skills</a></li>
+                </ul>
+             </nav>
+        </header>
+    </div>
+    <div>ABOUT ME</div>
+        <div id ='home' class ='profile' >
+            <div class = profile-description>
+                A biotechnologist with in-hand experiences in animal cell culture, molecular biology, bioinformatics, nanotechnology, and microbiology. Currently working as a Teaching Assistant in the Department of Biotechnology, Kathmandu University. 
+                Actively seeking a graduate research assistantship in biological sciences.A biotechnologist with in-hand experiences in animal cell culture, molecular biology, bioinformatics, nanotechnology, and microbiology. Currently working as a Teaching Assistant in the Department of Biotechnology, Kathmandu University. Actively seeking a graduate research assistantship in biological sciences.
+            </div>  
+            <div class="profile-image">
+                <img src="Capture.PNG" alt ='image'>
+            </div>
+        </div>
+        <div class="work-experience" id = 'experience'>
+            <div><h3>WORK EXPERIENCE</h3></div>
+            <div class="experience" >
+                <div class="company-logo">
+                    <img src="naxa.png" alt ='image'>
+                </div>
+                <div class="job-detail">
+                    <div class ='company-name'>
+                        NAXA Pvt. Ltd.
+                    </div>
+                    <div class="responsibilities">
+                        I have worked in a project called PCCMIS for a year.
+                    </div>
+                </div>
+            </div>
+            <div class="experience">
+                <div class="company-logo">
+                    <img src="neuron.jpg" alt ='image'>
+                </div>
+                <div class="job-detail">
+                    <div class ='company-name'>
+                        NAXA Pvt. Ltd.
+                    </div>
+                    <div class="responsibilities">
+                        I have worked in a project called PCCMIS for a year.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-project", id = 'project'>
+            <div><h3>PROJECTS</h3></div>
+            <div class = "project">
+                <div class="feature">
+                    <a href="">
+                        <div class="image">
+                            <img src="photo-1571074635691-b910c7a5cdbb.jpg" alt ='image'>
+                        </div>
+                        <div class="project-title">
+                            {{project.topic}}
+                        </div>
+                        <div class="project-description">
+                            A biotechnologist with in-hand experiences in animal cell culture, molecular biology, bioinformatics, nanotechnology, and microbiology. Currently working as a Teaching Assistant in the Department of Biotechnology, Kathmandu University. Actively seeking a graduate research assistantship in biological sciences.
+                        </div>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="">
+                        <div class="image">
+                            <img src="photo-1571074635691-b910c7a5cdbb.jpg" alt ='image'>
+                        </div>
+                        <div class="project-title">
+                            Effect of biochar on growth and yield of radish.
+                        </div>
+                        <div class="project-description">
+                            A biotechnologist with in-hand experiences in animal cell culture, molecular biology, bioinformatics, nanotechnology, and microbiology. Currently working as a Teaching Assistant in the Department of Biotechnology, Kathmandu University. Actively seeking a graduate research assistantship in biological sciences.
+                        </div>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="">
+                        <div class="image">
+                            <img src="photo-1571074635691-b910c7a5cdbb.jpg" alt ='image'>
+                        </div>
+                        <div class="project-title">
+                            Effect of biochar on growth and yield of radish.
+                        </div>
+                        <div class="project-description">
+                            A biotechnologist with in-hand experiences in animal cell culture, molecular biology, bioinformatics, nanotechnology, and microbiology. Currently working as a Teaching Assistant in the Department of Biotechnology, Kathmandu University. Actively seeking a graduate research assistantship in biological sciences.
+                        </div>
+                    </a>
+                    </div>
+                <div class="feature">Feature 4</div>
+                <div class="feature">Feature 5</div>
+                <div class="feature">Feature 6</div>
+                <button onclick="toggleContent(this)">See more</button>
+                    
+            </div>
+        </div>
+        
+        <div>SKILL SET</div>        
+        <div class = "skill">
+            <div class="skill-feature">
+                <a href="">
+                    <div class="image-skill">
+                        <img src="python.png" alt ='image'>
+                    </div>
+                    <div class="skill-name">
+                        Python
+                    </div>
+                </a>
+            </div>
+            <div class="skill-feature">
+                <a href="">
+                    <div class="image-skill">
+                        <img src="download_1.png" alt ='image'>
+                    </div>
+                    <div class="skill-name">
+                        Data Visulisation
+                    </div>
+                </a>
+            </div>
+            <div class="skill-feature">
+                <a href="">
+                    <div class="image-skill">
+                        <img src="python.png" alt ='image'>
+                    </div>
+                    <div class="skill-name">
+                        Python
+                    </div>
+                </a>
+            </div>
+            <div class="skill-feature">
+                <a href="">
+                    <div class="image-skill">
+                        <img src="python.png" alt ='image'>
+                    </div>
+                    <div class="skill-name">
+                        Python
+                    </div>
+                </a>
+            </div>
+            <div class="skill-feature">
+                <a href="">
+                    <div class="image-skill">
+                        <img src="python.png" alt ='image'>
+                    </div>
+                    <div class="skill-name">
+                        Python
+                    </div>
+                </a>
+            </div>
+            <div class="skill-feature">
+                <a href="">
+                    <div class="image-skill">
+                        <img src="python.png" alt ='image'>
+                    </div>
+                    <div class="skill-name">
+                        Python
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 My Website. All rights reserved.</p>
+        </footer>
+    </div>
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+      </a>  
+    <script>
+        function scrollToSection(section) {
+        const target = document.querySelector(section);
+        target.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        var backToTopButton = document.querySelector(".back-to-top");
+
+    window.addEventListener("scroll", scrollFunction);
+
+    function scrollFunction() {
+      if (window.pageYOffset > 300) {
+        if(!backToTopButton.classList.contains("show")) {
+          backToTopButton.classList.add("show");
+        }
+      }
+      else {
+        if(backToTopButton.classList.contains("show")) {
+          backToTopButton.classList.remove("show");
+        }
+      }
+    }
+
+    backToTopButton.addEventListener("click", backToTop);
+
+    function backToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    </script>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const parentContainer = document.querySelector('.project');
+            const elements = document.querySelectorAll('.feature');
+            const toggleButton = document.querySelector('.toggle-button');
+            const numToShow = 3;
+        
+            // Initially hide elements beyond the first "numToShow"
+            for (let i = numToShow; i < elements.length; i++) {
+            elements[i].style.display = 'none';
+            }
+        
+            toggleButton.addEventListener('click', () => {
+                for (let i = numToShow; i < elements.length; i++) {
+                    if (elements[i].style.display == 'none') {
+                    elements[i].style.display = 'block';
+                    toggleButton.textContent = 'See less';
+                    } 
+                    else {
+                    elements[i].style.display = 'none';
+                    toggleButton.textContent = 'See more';
+                    }
+                }
+            
+            });
+
+        });
+    </script> -->
+    
+</body>
+
